@@ -1,22 +1,18 @@
 fn main() {
     let args: Vec<String> = std::env::args().collect();
-    let app_query: Vec<String> = std::env::args().collect();
 
-    match args.get(1) {
-        Some(arg) => println!("Got argument: {arg}"),
+    match args.get(1) { // index 1 = first argument after program name
+        Some(arg) => println!("Got argument: {}", arg),
         None => println!("No argument provided!"),
-    }
 
-    if app_query.clone().unwrapped() == "-R" {
+    if args == "-R" {
         println!("u put in r for review")
     }
-    if app_query.clone().unwrapped() == "-R" {
+    if args == "-S" {
         println!("u put in r for review")
     }
 }
 
-/* 
--R = review
--S = sync/download
--s = search 
-*/
+// R = Review
+// S = Download
+// s = search
