@@ -1,3 +1,10 @@
+mod onlinets {    
+    pub fn install() {}
+    pub fn search() {}
+    pub fn review() {}
+}
+
+
 fn main() {
     let args: Vec<String> = std::env::args().collect();
 
@@ -7,29 +14,17 @@ fn main() {
     }
 
 if args.contains(&"-r".to_string()) {
-    review();
+    onlinets::review();
 }
 
 if args.contains(&"-i".to_string()) {
-    install();
+    onlinets::install();
 }
 
 if args.contains(&"-s".to_string()) {
-    search();
+    onlinets::search();
 }
 
-}
-
-fn review() {
-    println!("u put in r for review");
-}
-
-fn install() {
-    println!("u put in i for install");
-}
-
-fn search() {
-    println!("u put in s for search");
 }
 
 // R = Review
